@@ -100,6 +100,15 @@ body {
     border: solid 1px gray;
 }
 
+.products {
+    display: flex;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    background-color: lightskyblue;
+}
+
 .text-right {
     text-align: right;
 }
@@ -108,44 +117,34 @@ body {
     border: 2px solid red;
 }
 
-.message {
-    border-radius: 5px;
-    border: solid 1px;
-    padding: 5px 10px;
+.text-center {
     text-align: center;
-    margin-top: 10px;
 }
 
-.message:first-child {
-    margin-top: 0;
+
+.icon-block {
+    font-size: 30px;
+    margin: auto 0 auto auto;
 }
 
-.message-error {
-    background: rgba(255, 0, 0, 0.15);
-    border-color: darkred;
-    color: darkred;
+.icon {
+    display: inline-block;
+    width: 62px;
+    border: 1px solid black;
+    padding: 7px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
 }
 
-.message-warning {
-    background: rgba(255, 255, 0, 0.15);
-    border-color: goldenrod;
-    color: goldenrod;
+.update {
+    background-color: green;
 }
 
-.message-success {
-    background: rgba(0, 255, 0, 0.15);
-    border-color: green;
-    color: green;
+.delete {
+    background-color: red;
 }
 
-.message-info {
-    background: rgba(0, 0, 255, 0.15);
-    border-color: darkblue;
-    color: darkblue;
-}
-
-.message-default {
-    background: rgba(0, 0, 0, 0.15);
-    border-color: #444444;
-    color: #444444;
+.review-but {
+    margin: auto 0 auto auto;
 }

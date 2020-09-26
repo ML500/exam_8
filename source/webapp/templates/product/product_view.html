@@ -5,41 +5,40 @@
 
 {% block menu %}
     {% if perms.webapp.change_product %}
-    <li><a href="{% url 'webapp:product_update' product.pk %}">Update</a></li>
+        <li><a href="{% url 'webapp:product_update' product.pk %}">Update</a></li>
     {% endif %}
 
     {% if perms.webapp.delete_product %}
-    <li><a href="{% url 'webapp:product_delete' product.pk %}">Delete</a></li>
+        <li><a href="{% url 'webapp:product_delete' product.pk %}">Delete</a></li>
     {% endif %}
 
-    {% if perms.webapp.add_product %}
     <li><a href="{% url 'webapp:review_add' product.pk %}">Review Add</a></li>
-    {% endif %}
 {% endblock %}
 
 {% block content %}
-    <h3>{{ product.name }}</h3>
+    <h1 class="text-center">{{ product.name }}</h1>
     <p>Категория: {{ product.get_category_display }}</p>
     <p>Описание: {{ product.description }}</p>
+    <p>Средний рейтинг: {{ product.avg }}</p>
     {% if product.avatar %}
         <img class="avatar" src="{{ product.avatar.url }}" width="250" height="250" alt="product picture">
     {% else %}
         <img class="avatar" src="{% static 'images/unnamed (1).png' %}" width="250" height="250" alt="product picture">
     {% endif %}
     <hr>
+    <h2 class="text-center">Отзывы</h2>
     {% for review in product.reviews.all %}
-        {#            {% if request.user in goal.project.user.all %}#}
-        {#                <div class="goals">#}
-        {#                    <div class="text-block">#}
-        {#                        <h4 class="summary"><a href="{% url 'webapp:goal_view' goal.pk %}">{{ goal.summary }}</a></h4>#}
-
-        <p><a href="{% url 'webapp:review_view' review.pk%}">{{ review.text_review }}</a></p>
+        <p>Review: {{ review.text_review }}</p>
+        <p>User: <a href="{% url 'accounts:detail' review.author.pk %}">{{ review.author }}</a></p>
+        <p>Email: {{ review.author.email }}</p>
+        <p>Rating: {{ review.rating }}</p>
         {% if perms.webapp.change_review or review.author == request.user %}
             <p><a href="{% url 'webapp:review_update' review.pk %}">Update</a></p>
         {% endif %}
         {% if perms.webapp.delete_review or review.author == request.user %}
             <p><a href="{% url 'webapp:review_delete' review.pk %}">Delete</a></p>
         {% endif %}
+        <hr>
 
 
         {#                    </div>#}

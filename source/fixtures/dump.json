@@ -1,62 +1,209 @@
 [
 {
   "model": "webapp.product",
-  "pk": 1,
+  "pk": 10,
   "fields": {
-    "name": "product 1",
-    "category": "food",
+    "name": "\u041b\u043e\u043f\u0430\u0442\u0430",
+    "category": "household",
     "description": "TestDescription",
-    "avatar": ""
+    "avatar": "user_pics/unnamed_sxqc0Ci.jpg"
   }
 },
 {
   "model": "webapp.product",
-  "pk": 2,
+  "pk": 16,
   "fields": {
-    "name": "product 2",
+    "name": "\u0418\u0433\u0440\u0443\u0448\u043a\u0430",
     "category": "toys",
-    "description": "TestDescription",
+    "description": "\u0418\u0433\u0440\u0443\u0448\u043a\u0430 \u0434\u043b\u044f \u0434\u0435\u0442\u0435\u0439",
+    "avatar": "user_pics/\u0411\u0435\u0437_\u043d\u0430\u0437\u0432\u0430\u043d\u0438\u044f.jpeg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 19,
+  "fields": {
+    "name": "\u0413\u0430\u043c\u0431\u0443\u0440\u0433\u0435\u0440",
+    "category": "food",
+    "description": "\u0413\u0430\u043c\u0431\u0443\u0440\u0433\u0435\u0440 \u0438\u0437 \u043c\u0430\u043a\u0434\u043e\u043d\u0430\u043b\u044c\u0434\u0441\u0430",
+    "avatar": "user_pics/depositphotos_1098427-stock-photo-cheeseburger_sem1Dkz.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 20,
+  "fields": {
+    "name": "\u0441\u0442\u0438\u0440\u0430\u043b\u044c\u043d\u0430\u044f \u043c\u0430\u0448\u0438\u043d\u0430",
+    "category": "appliances",
+    "description": "\u0421\u0442\u0438\u0440\u0430\u043b\u044c\u043d\u0430\u044f \u043c\u0430\u0448\u0438\u043d\u0430 \u0441\u0435\u0440\u0430\u044f",
+    "avatar": "user_pics/e0b135939e3e86384395fc849263ec74.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 21,
+  "fields": {
+    "name": "\u041c\u0430\u0448\u0438\u043d\u0430",
+    "category": "other",
+    "description": "\u041c\u0435\u0440\u0441\u0435\u0434\u0435\u0441",
     "avatar": ""
   }
 },
 {
   "model": "webapp.product",
-  "pk": 3,
+  "pk": 22,
   "fields": {
-    "name": "product 3",
-    "category": "appliances",
+    "name": "\u041b\u043e\u043f\u0430\u0442\u0430",
+    "category": "household",
     "description": "TestDescription",
-    "avatar": ""
+    "avatar": "user_pics/unnamed_Tvs1fk4.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 23,
+  "fields": {
+    "name": "\u041b\u043e\u043f\u0430\u0442\u0430",
+    "category": "household",
+    "description": "TestDescription",
+    "avatar": "user_pics/unnamed_SjaLRFz.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 24,
+  "fields": {
+    "name": "\u041b\u043e\u043f\u0430\u0442\u0430",
+    "category": "household",
+    "description": "TestDescription",
+    "avatar": "user_pics/unnamed_qSsUrf9.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 25,
+  "fields": {
+    "name": "\u041b\u043e\u043f\u0430\u0442\u0430",
+    "category": "household",
+    "description": "TestDescription",
+    "avatar": "user_pics/unnamed_Elu2fXT.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 26,
+  "fields": {
+    "name": "\u041b\u043e\u043f\u0430\u0442\u0430",
+    "category": "household",
+    "description": "TestDescription",
+    "avatar": "user_pics/unnamed_UAe1FkG.jpg"
   }
 },
 {
   "model": "webapp.review",
-  "pk": 1,
+  "pk": 11,
   "fields": {
     "author": 1,
-    "product": 1,
-    "text_review": "ReviewTest",
+    "product": 10,
+    "text_review": "\u0425\u043e\u0440\u043e\u0448\u0430\u044f \u043b\u043e\u043f\u0430\u0442\u0430",
     "rating": 4
   }
 },
 {
   "model": "webapp.review",
-  "pk": 2,
+  "pk": 12,
   "fields": {
     "author": 1,
-    "product": 2,
-    "text_review": "ReviewTest",
+    "product": 10,
+    "text_review": "\u0421\u0440\u0435\u0434\u043d\u044f\u044f",
     "rating": 3
   }
 },
 {
   "model": "webapp.review",
-  "pk": 3,
+  "pk": 13,
   "fields": {
     "author": 1,
-    "product": 3,
-    "text_review": "ReviewTest",
+    "product": 16,
+    "text_review": "\u041a\u043b\u0430\u0441\u0441\u043d\u0430\u044f \u0438\u0433\u0440\u0443\u0448\u043a\u0430",
+    "rating": 5
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 14,
+  "fields": {
+    "author": 1,
+    "product": 16,
+    "text_review": "\u0418\u043c\u0435\u0435\u0442 \u043d\u0435\u043f\u0440\u0438\u044f\u0442\u043d\u044b\u0439 \u0437\u0430\u043f\u0430\u0445",
     "rating": 2
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 15,
+  "fields": {
+    "author": 1,
+    "product": 19,
+    "text_review": "\u041e\u0447\u0435\u043d\u044c \u0432\u043a\u0443\u0441\u043d\u044b\u0439",
+    "rating": 5
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 16,
+  "fields": {
+    "author": 1,
+    "product": 19,
+    "text_review": "\u041d\u0435 \u0441\u0432\u0435\u0436\u0438\u0439",
+    "rating": 1
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 17,
+  "fields": {
+    "author": 1,
+    "product": 20,
+    "text_review": "\u041e\u0442\u043b\u0438\u0447\u043d\u0430\u044f \u043c\u0430\u0448\u0438\u043d\u043a\u0430",
+    "rating": 5
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 18,
+  "fields": {
+    "author": 1,
+    "product": 20,
+    "text_review": "\u041e\u0447\u0435\u043d\u044c \u0434\u043e\u0440\u043e\u0433\u0430\u044f",
+    "rating": 4
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "birth_date": null,
+    "avatar": "user_pics/kinopoisk.ru-Jackie-Chan-2269666.jpg"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "birth_date": null,
+    "avatar": ""
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "birth_date": "2020-09-26",
+    "avatar": "user_pics/Arnold_Schwarzenegger.jpg"
   }
 }
 ]

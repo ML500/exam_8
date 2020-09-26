@@ -4,18 +4,22 @@
 {% block menu %}
 {% endblock %}
 {% block content %}
-    <h1>Товары:</h1>
-{#        {% if is_paginated %}#}
-{#            {% include 'partial/pagination.html' %}#}
-{#        {% endif %}#}
+    <h1 class="text-center">Товары</h1>
     {% for product in products %}
-        <h3><a href="{% url "webapp:product_view" product.pk %}">{{ product.name }}</a></h3>
-        <p>Категория: {{ product.get_category_display }} </p>
-        {#        {% if perms.webapp.change_product %}#}
-        {#            <p><a href="{% url 'webapp:product_update' product.pk %}">Update</a></p>#}
-        {#        {% endif %}#}
-        {#        {% if perms.webapp.delete_product %}#}
-        {#            <p><a href="{% url 'webapp:product_delete' product.pk %}">Delete</a></p>#}
-        {#        {% endif %}#}
+        <div class="products">
+            <div class="text-block">
+                <h3><a href="{% url "webapp:product_view" product.pk %}">{{ product.name }}</a></h3>
+                <p>Категория: {{ product.get_category_display }} </p>
+                <p>Средний рейтинг: {{ product.avg }}</p>
+            </div>
+            <div class="icon-block">
+                {% if perms.webapp.change_product %}
+                    <p class="icon update"><a href="{% url 'webapp:product_update' product.pk %}">Update</a></p>
+                {% endif %}
+                {% if perms.webapp.delete_product %}
+                    <p class="icon delete"><a href="{% url 'webapp:product_delete' product.pk %}">Delete</a></p>
+                {% endif %}
+            </div>
+        </div>
     {% endfor %}
 {% endblock %}

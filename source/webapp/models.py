@@ -19,6 +19,18 @@ class Product(models.Model):
     description = models.TextField(max_length=2000, null=True, blank=True, verbose_name='Описание')
     avatar = models.ImageField(null=True, blank=True, upload_to='user_pics', verbose_name='Картинка')
 
+    def avg(self):
+        all = 0
+        reviews = Review.objects.filter(product=self.pk)
+        if reviews:
+            count = 0
+            for item in reviews:
+                all += int(item.rating)
+                count += 1
+            return round(all / count, 2)
+        else:
+            return all
+
     def __str__(self):
         return self.name
 

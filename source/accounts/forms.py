@@ -10,6 +10,8 @@ from .models import AuthToken, Profile, TOKEN_TYPE_PASSWORD_RESET
 
 
 class MyUserCreationForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
     class Meta(UserCreationForm.Meta):
         fields = ['username', 'password1', 'password2',
                   'first_name', 'last_name', 'email']
@@ -26,11 +28,6 @@ class MyUserCreationForm(UserCreationForm):
             user = super().save(commit=commit)
             Profile.objects.create(user=user)
         return user
-
-    # def save(self, commit=True):
-    #     user = super().save(commit=commit)
-    #     Profile.objects.create(user=user)
-    #     return user
 
     def create_token(self, user):
         return AuthToken.objects.create(user=user)

@@ -63,12 +63,3 @@ class ReviewDeleteView(PermissionRequiredMixin, DeleteView):
 
     def get_success_url(self):
         return reverse('webapp:product_view', kwargs={'pk': self.object.product.pk})
-
-
-class ReviewView(DetailView):
-    template_name = 'review/review_view.html'
-    model = Review
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
