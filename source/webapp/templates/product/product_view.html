@@ -1,16 +1,20 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block title %}View{% endblock %}
 
 {% block menu %}
-    {#    {% if perms.webapp.change_product %}#}
+    {% if perms.webapp.change_product %}
     <li><a href="{% url 'webapp:product_update' product.pk %}">Update</a></li>
+    {% endif %}
+
+    {% if perms.webapp.delete_product %}
     <li><a href="{% url 'webapp:product_delete' product.pk %}">Delete</a></li>
+    {% endif %}
+
+    {% if perms.webapp.add_product %}
     <li><a href="{% url 'webapp:review_add' product.pk %}">Review Add</a></li>
-    {#    {% endif %}#}
-    {#    {% if perms.webapp.delete_product %}#}
-    {#        <li><a href="{% url 'webapp:product_delete' product.pk %}">Delete</a></li>#}
-    {#    {% endif %}#}
+    {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -19,6 +23,8 @@
     <p>Описание: {{ product.description }}</p>
     {% if product.avatar %}
         <img class="avatar" src="{{ product.avatar.url }}" width="250" height="250" alt="product picture">
+    {% else %}
+        <img class="avatar" src="{% static 'images/unnamed (1).png' %}" width="250" height="250" alt="product picture">
     {% endif %}
     <hr>
     {% for review in product.reviews.all %}
@@ -26,7 +32,14 @@
         {#                <div class="goals">#}
         {#                    <div class="text-block">#}
         {#                        <h4 class="summary"><a href="{% url 'webapp:goal_view' goal.pk %}">{{ goal.summary }}</a></h4>#}
-        <p>Review: {{ review.text_review }}</p>
+
+        <p><a href="{% url 'webapp:review_view' review.pk%}">{{ review.text_review }}</a></p>
+        {% if perms.webapp.change_review or review.author == request.user %}
+            <p><a href="{% url 'webapp:review_update' review.pk %}">Update</a></p>
+        {% endif %}
+        {% if perms.webapp.delete_review or review.author == request.user %}
+            <p><a href="{% url 'webapp:review_delete' review.pk %}">Delete</a></p>
+        {% endif %}
 
 
         {#                    </div>#}

@@ -17,7 +17,7 @@ class Product(models.Model):
     category = models.TextField(max_length=20, choices=CATEGORY_CHOICES,
                                 default=DEFAULT_CATEGORY, verbose_name='Категория')
     description = models.TextField(max_length=2000, null=True, blank=True, verbose_name='Описание')
-    avatar = models.ImageField(null=True, blank=True, upload_to='image', verbose_name='Картинка')
+    avatar = models.ImageField(null=True, blank=True, upload_to='user_pics', verbose_name='Картинка')
 
     def __str__(self):
         return self.name
