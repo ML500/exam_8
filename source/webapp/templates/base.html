@@ -24,7 +24,8 @@
 {#                                    Привет, {{ request.user.get_full_name|default:request.user.username }}#}
 {#                                </a></li>#}
 {#                <li><a href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}">Logout</a></li>#}
-{#                {% block menu %}{% endblock %}#}
+            <li><a href={% url 'webapp:product_create' %}>Create</a></li>
+            {% block menu %}{% endblock %}
 {#            {% else %}#}
 {#                <li><a href="{% url 'accounts:login' %}?next={{ request.get_full_path }}">Login</a></li>#}
 {#                <li><a href="{% url 'accounts:create' %}?next={{ request.get_full_path }}">Sign Up</a></li>#}
@@ -32,14 +33,6 @@
 {##}
 {#            {% endif %}#}
         </ul>
-        {% block search %}
-            <div class="search-form">
-                <form action="{% url 'webapp:index' %}" method="GET">
-                    {{ search_form.search }}
-                    <input type="submit" value="Найти">
-                </form>
-            </div>
-        {% endblock %}
     </div>
 </nav>
 <div class="container">

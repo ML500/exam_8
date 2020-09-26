@@ -1,0 +1,34 @@
+{% if is_paginated %}
+    {% include 'partial/pagination.html' %}
+{% endif %}
+
+<form action="{% url "article_mass_action" %}" method="post">
+    {% csrf_token %}
+<p class="mass-actions"><input type="submit" name="delete" value="Delete selected"></p>
+
+{% for product in products %}
+    <div class="box">
+        <h3><a href="{% url "product_view" product.pk %}">{{ product.name }}</a></h3>
+        <p>
+            <label for="selected_products-{{ product.pk }}">Select: </label>
+            <input type="checkbox" name="selected_products"
+                   id="selected_products-{{ product.pk }}" value="{{ product.pk }}">
+        </p>
+        <p>Категория: ({{ product.category }} | {{ product.get_status_display }})</p>
+        <p>
+            <a href="{% url 'accounts:detail' article.author_id %}">{{ article.author }}</a>| {{ article.created_at|date:"d.m.Y H:i:s" }}
+        </p>
+        <p>Publish at: {{ article.publish_at|date:"d.m.Y H:i:s" }}</p>
+        {% if perms.webapp.change_article or article.author == request.user %}
+            <p><a href="{% url 'article_update' article.pk %}">Update</a></p>
+        {% endif %}
+        {% if perms.webapp.change_article or article.author == request.user %}
+            <p><a href="{% url 'article_delete' article.pk %}">Delete</a></p>
+        {% endif %}
+    </div>
+{% endfor %}
+</form>
+
+{% if is_paginated %}
+    {% include 'partial/pagination.html' %}
+{% endif %}
