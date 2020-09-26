@@ -1,0 +1,62 @@
+[
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "product 1",
+    "category": "food",
+    "description": "TestDescription",
+    "avatar": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "name": "product 2",
+    "category": "toys",
+    "description": "TestDescription",
+    "avatar": ""
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "product 3",
+    "category": "appliances",
+    "description": "TestDescription",
+    "avatar": ""
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "product": 1,
+    "text_review": "ReviewTest",
+    "rating": 4
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 2,
+  "fields": {
+    "author": 1,
+    "product": 2,
+    "text_review": "ReviewTest",
+    "rating": 3
+  }
+},
+{
+  "model": "webapp.review",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "product": 3,
+    "text_review": "ReviewTest",
+    "rating": 2
+  }
+}
+]
